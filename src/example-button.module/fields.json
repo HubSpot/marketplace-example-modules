@@ -35,6 +35,20 @@
             "type": "font",
             "default": {
               "size_unit": "px"
+            },
+            "inherited_value": {
+              "property_value_paths": {
+                "fallback": "theme.body_font.fallback",
+                "font": "theme.body_font.font",
+                "font_set": "theme.body_font.font_set",
+                "variant": "theme.body_font.variant"
+              }
+            },
+            "default": {
+              "color": "#ffffff",
+              "styles": {
+                "text-decoration": "none"
+              }
             }
           },
           {
@@ -47,7 +61,8 @@
               [ "uppercase", "Uppercase" ],
               [ "lowercase", "Lowercase" ]
             ],
-            "display": "select"
+            "display": "select",
+            "default": "none"
           }
         ]
       },
@@ -59,7 +74,16 @@
           {
             "label": "Color",
             "name": "color",
-            "type": "color"
+            "type": "color",
+            "inherited_value": {
+              "property_value_paths": {
+                "color": "theme.primary_color.color"
+              }
+            },
+            "default": {
+              "color": "#1c2e4a",
+              "opacity": 100
+            }
           }
         ]
       },
@@ -72,34 +96,6 @@
             "label" : "Border",
             "name" : "border",
             "type" : "border"
-          }
-        ]
-      },
-      {
-        "label": "Corner",
-        "name": "corner",
-        "type": "group",
-        "children": [
-          {
-            "label": "Radius",
-            "name": "radius",
-            "type": "number",
-            "display": "text",
-            "max": 100,
-            "step": 1,
-            "suffix": "px"
-          }
-        ]
-      },
-      {
-        "label": "Spacing",
-        "name": "spacing",
-        "type": "group",
-        "children": [
-          {
-            "label": "Spacing",
-            "name": "spacing",
-            "type": "spacing"
           }
         ]
       },
@@ -121,6 +117,16 @@
                   "hidden_subfields": {
                     "size": true
                   }
+                },
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "module.styles.text.font.color",
+                    "fallback": "module.styles.text.font.fallback",
+                    "font": "module.styles.text.font.font",
+                    "font_set": "module.styles.text.font.font_set",
+                    "styles": "module.styles.text.font.styles",
+                    "variant": "module.styles.text.font.variant"
+                  }
                 }
               }
             ]
@@ -133,7 +139,13 @@
               {
                 "label": "Color",
                 "name": "color",
-                "type": "color"
+                "type": "color",
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "module.styles.background.color.color",
+                    "opacity": "module.styles.background.color.opacity"
+                  }
+                }
               }
             ]
           },
@@ -148,6 +160,55 @@
                 "type" : "border"
               }
             ]
+          }
+        ]
+      },
+      {
+        "label": "Corner",
+        "name": "corner",
+        "type": "group",
+        "children": [
+          {
+            "label": "Radius",
+            "name": "radius",
+            "type": "number",
+            "display": "text",
+            "max": 100,
+            "step": 1,
+            "suffix": "px",
+            "default": 5
+          }
+        ]
+      },
+      {
+        "label": "Spacing",
+        "name": "spacing",
+        "type": "group",
+        "children": [
+          {
+            "label": "Spacing",
+            "name": "spacing",
+            "type": "spacing",
+            "default": {
+              "padding": {
+                "top": {
+                  "value": 10,
+                  "units": "px"
+                },
+                "right": {
+                  "value": 20,
+                  "units": "px"
+                },
+                "bottom": {
+                  "value": 10,
+                  "units": "px"
+                },
+                "left": {
+                  "value": 20,
+                  "units": "px"
+                }
+              }
+            }
           }
         ]
       },
