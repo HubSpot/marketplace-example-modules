@@ -1,0 +1,20 @@
+{
+  "name": "@hubspot/marketplace-example-modules",
+  "version": "0.1.0",
+  "description": "Example modules that pass the marketplace module validation",
+  "repository": {
+    "type": "git",
+    "url": "git@git.hubteam.com:HubSpot/marketplace-example-modules.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "eslint": "^v8.36.0",
+    "prettier": "^2.8.4"
+  },
+  "scripts": {
+    "eslint": "eslint src",
+    "lint": "eslint src && prettier --list-different 'src/**/*.css' 'src/**/*.js' 'src/**/*.json'",
+    "prettier:write": "prettier --write 'src/**/*.css' 'src/**/*.js' 'src/**/*.json'"
+  }
+}
