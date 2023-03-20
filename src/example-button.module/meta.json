@@ -1,7 +1,7 @@
 {
   "label": "Example button",
   "host_template_types": ["PAGE", "BLOG_LISTING", "BLOG_POST"],
-  "icon": "",
+  "icon": "https://7303166.fs1.hubspotusercontent-na1.net/hubfs/7303166/Marketplace%20Example%20Modules/example-button-icon.svg",
   "master_language": "en",
   "is_available_for_new_content": true
 }
