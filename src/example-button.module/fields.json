@@ -33,9 +33,6 @@
             "label": "Font",
             "name": "font",
             "type": "font",
-            "default": {
-              "size_unit": "px"
-            },
             "inherited_value": {
               "property_value_paths": {
                 "fallback": "theme.body_font.fallback",
