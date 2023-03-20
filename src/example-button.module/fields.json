@@ -46,6 +46,7 @@
             },
             "default": {
               "color": "#ffffff",
+              "size_unit": "px",
               "styles": {
                 "text-decoration": "none"
               }
