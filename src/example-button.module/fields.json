@@ -120,12 +120,12 @@
                 },
                 "inherited_value": {
                   "property_value_paths": {
-                    "color": "module.styles.text.font.color",
-                    "fallback": "module.styles.text.font.fallback",
-                    "font": "module.styles.text.font.font",
-                    "font_set": "module.styles.text.font.font_set",
-                    "styles": "module.styles.text.font.styles",
-                    "variant": "module.styles.text.font.variant"
+                    "color": "module.styles.group_text.font.color",
+                    "fallback": "module.styles.group_text.font.fallback",
+                    "font": "module.styles.group_text.font.font",
+                    "font_set": "module.styles.group_text.font.font_set",
+                    "styles": "module.styles.group_text.font.styles",
+                    "variant": "module.styles.group_text.font.variant"
                   }
                 }
               }
@@ -142,8 +142,8 @@
                 "type": "color",
                 "inherited_value": {
                   "property_value_paths": {
-                    "color": "module.styles.background.color.color",
-                    "opacity": "module.styles.background.color.opacity"
+                    "color": "module.styles.group_background.color.color",
+                    "opacity": "module.styles.group_background.color.opacity"
                   }
                 }
               }
