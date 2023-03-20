@@ -26,7 +26,7 @@
     "children": [
       {
         "label": "Text",
-        "name": "text",
+        "name": "group_text",
         "type": "group",
         "children": [
           {
@@ -68,7 +68,7 @@
       },
       {
         "label": "Background",
-        "name": "background",
+        "name": "group_background",
         "type": "group",
         "children": [
           {
@@ -89,7 +89,7 @@
       },
       {
         "label": "Border",
-        "name": "border",
+        "name": "group_border",
         "type": "group",
         "children": [
           {
@@ -101,12 +101,12 @@
       },
       {
         "label": "Hover",
-        "name": "hover",
+        "name": "group_hover",
         "type": "group",
         "children": [
           {
             "label": "Text",
-            "name": "text",
+            "name": "group_text",
             "type": "group",
             "children": [
               {
@@ -133,7 +133,7 @@
           },
           {
             "label": "Background",
-            "name": "background",
+            "name": "group_background",
             "type": "group",
             "children": [
               {
@@ -151,7 +151,7 @@
           },
           {
             "label": "Border",
-            "name": "border",
+            "name": "group_border",
             "type": "group",
             "children": [
               {
@@ -165,7 +165,7 @@
       },
       {
         "label": "Corner",
-        "name": "corner",
+        "name": "group_corner",
         "type": "group",
         "children": [
           {
@@ -182,7 +182,7 @@
       },
       {
         "label": "Spacing",
-        "name": "spacing",
+        "name": "group_spacing",
         "type": "group",
         "children": [
           {
@@ -214,7 +214,7 @@
       },
       {
         "label": "Alignment",
-        "name": "alignment",
+        "name": "group_alignment",
         "type": "group",
         "children": [
           {

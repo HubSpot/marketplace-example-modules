@@ -26,70 +26,70 @@
 
       {# Button wrapper #}
 
-      {% if module.styles.alignment.alignment %}
+      {% if module.styles.group_alignment.alignment %}
         .{{ class_prefix }}-wrapper {
-          text-align: {{ module.styles.alignment.alignment.horizontal_align }};
+          text-align: {{ module.styles.group_alignment.alignment.horizontal_align }};
         }
       {% endif %}
 
       {# Button #}
 
       .{{ class_prefix }} {
-        {% if module.styles.background.color.color %}
-          background-color: rgba({{ module.styles.background.color.color|convert_rgb }}, {{ module.styles.background.color.opacity / 100 }});
+        {% if module.styles.group_background.color.color %}
+          background-color: rgba({{ module.styles.group_background.color.color|convert_rgb }}, {{ module.styles.group_background.color.opacity / 100 }});
         {% endif %}
-        {{ module.styles.border.border.css }}
-        {% if module.styles.corner.radius >= 0 %}
-          border-radius: {{ module.styles.corner.radius ~ "px" }};
+        {{ module.styles.group_border.border.css }}
+        {% if module.styles.group_corner.radius >= 0 %}
+          border-radius: {{ module.styles.group_corner.radius ~ "px" }};
         {% endif %}
-        {% if module.styles.text.font.color %}
-          color: {{ module.styles.text.font.color }};
+        {% if module.styles.group_text.font.color %}
+          color: {{ module.styles.group_text.font.color }};
         {% endif %}
-        {% if module.styles.text.font.size %}
-          font-size: {{ module.styles.text.font.size ~ module.styles.text.font.size_unit }};
+        {% if module.styles.group_text.font.size %}
+          font-size: {{ module.styles.group_text.font.size ~ module.styles.group_text.font.size_unit }};
         {% endif %}
-        {% if module.styles.text.font.style %}
-          {{ module.styles.text.font.style }};
+        {% if module.styles.group_text.font.style %}
+          {{ module.styles.group_text.font.style }};
         {% endif %}
-        {{ module.styles.spacing.spacing.css }}
-        {% if module.styles.text.transform %}
-          text-transform: {{ module.styles.text.transform }};
+        {{ module.styles.group_spacing.spacing.css }}
+        {% if module.styles.group_text.transform %}
+          text-transform: {{ module.styles.group_text.transform }};
         {% endif %}
       }
 
       .{{ class_prefix }}:hover,
       .{{ class_prefix }}:focus {
-        {% if module.styles.hover.background.color.color %}
-          background-color: rgba({{ module.styles.hover.background.color.color|convert_rgb }}, {{ module.styles.hover.background.color.opacity / 100 }});
+        {% if module.styles.group_hover.group_background.color.color %}
+          background-color: rgba({{ module.styles.group_hover.group_background.color.color|convert_rgb }}, {{ module.styles.group_hover.group_background.color.opacity / 100 }});
         {% endif %}
-        {{ module.styles.hover.border.border.css }}
-        {% if module.styles.hover.text.font.color %}
-          color: {{ module.styles.hover.text.font.color }};
+        {{ module.styles.group_hover.group_border.border.css }}
+        {% if module.styles.group_hover.group_text.font.color %}
+          color: {{ module.styles.group_hover.group_text.font.color }};
         {% endif %}
-        {% if module.styles.hover.text.font.size %}
-          font-size: {{ module.styles.hover.text.font.size ~ module.styles.hover.text.font.size_unit }};
+        {% if module.styles.group_hover.group_text.font.size %}
+          font-size: {{ module.styles.group_hover.group_text.font.size ~ module.styles.group_hover.text.group_font.size_unit }};
         {% endif %}
-        {% if module.styles.hover.text.font.style %}
-          {{ module.styles.hover.text.font.style }};
+        {% if module.styles.group_hover.group_text.font.style %}
+          {{ module.styles.group_hover.group_text.font.style }};
         {% endif %}
       }
 
       .{{ class_prefix }}:active {
-        {% if module.styles.hover.background.color.color %}
-          background-color: rgba({{ color_variant(module.styles.hover.background.color.color, 80)|convert_rgb }}, {{ module.styles.hover.background.color.opacity / 100 }});
+        {% if module.styles.group_hover.group_background.color.color %}
+          background-color: rgba({{ color_variant(module.styles.group_hover.group_background.color.color, 80)|convert_rgb }}, {{ module.styles.group_hover.group_background.color.opacity / 100 }});
         {% endif %}
-        {{ module.styles.hover.border.border.css }}
-        {% if module.styles.hover.border.border %}
-          border-color: {{ color_variant(module.styles.hover.border.border.top.color, 80) }};
+        {{ module.styles.group_hover.group_border.border.css }}
+        {% if module.styles.group_hover.group_border.border %}
+          border-color: {{ color_variant(module.styles.group_hover.group_border.border.top.color, 80) }};
         {% endif %}
-        {% if module.styles.hover.text.font.color %}
-          color: {{ module.styles.hover.text.font.color }};
+        {% if module.styles.group_hover.group_text.font.color %}
+          color: {{ module.styles.group_hover.group_text.font.color }};
         {% endif %}
-        {% if module.styles.hover.text.font.size %}
-          font-size: {{ module.styles.hover.text.font.size ~ module.styles.hover.text.font.size_unit }};
+        {% if module.styles.group_hover.group_text.font.size %}
+          font-size: {{ module.styles.group_hover.group_text.font.size ~ module.styles.group_hover.group_text.font.size_unit }};
         {% endif %}
-        {% if module.styles.hover.text.font.style %}
-          {{ module.styles.hover.text.font.style }};
+        {% if module.styles.group_hover.group_text.font.style %}
+          {{ module.styles.group_hover.group_text.font.style }};
         {% endif %}
       }
 
