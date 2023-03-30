@@ -1,0 +1,110 @@
+{##### Module variables #####}
+
+{# Sets a prefix that is applied to classes used in the module #}
+
+{% set class_prefix = "example-button" %}
+
+{# Sets attributes used for the link field #}
+
+{% set href = module.button_link.url.href %}
+{% if module.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+{% endif %}
+{% set rel = [] %}
+{% if module.button_link.no_follow %}
+  {% do rel.append("nofollow") %}
+{% endif %}
+{% if module.button_link.open_in_new_tab %}
+  {% do rel.append("noopener") %}
+{% endif %}
+
+{##### Module styles #####}
+
+{% require_css %}
+  <style>
+    {% scope_css %}
+
+      {# Button wrapper #}
+
+      {% if module.styles.group_alignment.alignment %}
+        .{{ class_prefix }}-wrapper {
+          text-align: {{ module.styles.group_alignment.alignment.horizontal_align }};
+        }
+      {% endif %}
+
+      {# Button #}
+
+      .{{ class_prefix }} {
+        {% if module.styles.group_background.color.color %}
+          background-color: rgba({{ module.styles.group_background.color.color|convert_rgb }}, {{ module.styles.group_background.color.opacity / 100 }});
+        {% endif %}
+        {{ module.styles.group_border.border.css }}
+        {% if module.styles.group_corner.radius >= 0 %}
+          border-radius: {{ module.styles.group_corner.radius ~ "px" }};
+        {% endif %}
+        {% if module.styles.group_text.font.color %}
+          color: {{ module.styles.group_text.font.color }};
+        {% endif %}
+        {% if module.styles.group_text.font.size %}
+          font-size: {{ module.styles.group_text.font.size ~ module.styles.group_text.font.size_unit }};
+        {% endif %}
+        {% if module.styles.group_text.font.style %}
+          {{ module.styles.group_text.font.style }};
+        {% endif %}
+        {{ module.styles.group_spacing.spacing.css }}
+        {% if module.styles.group_text.transform %}
+          text-transform: {{ module.styles.group_text.transform }};
+        {% endif %}
+      }
+
+      .{{ class_prefix }}:hover,
+      .{{ class_prefix }}:focus {
+        {% if module.styles.group_hover.group_background.color.color %}
+          background-color: rgba({{ module.styles.group_hover.group_background.color.color|convert_rgb }}, {{ module.styles.group_hover.group_background.color.opacity / 100 }});
+        {% endif %}
+        {{ module.styles.group_hover.group_border.border.css }}
+        {% if module.styles.group_hover.group_text.font.color %}
+          color: {{ module.styles.group_hover.group_text.font.color }};
+        {% endif %}
+        {% if module.styles.group_hover.group_text.font.size %}
+          font-size: {{ module.styles.group_hover.group_text.font.size ~ module.styles.group_hover.text.group_font.size_unit }};
+        {% endif %}
+        {% if module.styles.group_hover.group_text.font.style %}
+          {{ module.styles.group_hover.group_text.font.style }};
+        {% endif %}
+      }
+
+      .{{ class_prefix }}:active {
+        {% if module.styles.group_hover.group_background.color.color %}
+          background-color: rgba({{ color_variant(module.styles.group_hover.group_background.color.color, 80)|convert_rgb }}, {{ module.styles.group_hover.group_background.color.opacity / 100 }});
+        {% endif %}
+        {{ module.styles.group_hover.group_border.border.css }}
+        {% if module.styles.group_hover.group_border.border %}
+          border-color: {{ color_variant(module.styles.group_hover.group_border.border.top.color, 80) }};
+        {% endif %}
+        {% if module.styles.group_hover.group_text.font.color %}
+          color: {{ module.styles.group_hover.group_text.font.color }};
+        {% endif %}
+        {% if module.styles.group_hover.group_text.font.size %}
+          font-size: {{ module.styles.group_hover.group_text.font.size ~ module.styles.group_hover.group_text.font.size_unit }};
+        {% endif %}
+        {% if module.styles.group_hover.group_text.font.style %}
+          {{ module.styles.group_hover.group_text.font.style }};
+        {% endif %}
+      }
+
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+
+{##### Module HTML #####}
+
+<div class="{{ class_prefix }}-wrapper">
+  <a href="{{ href }}" class="{{ class_prefix }}"
+    {% if module.button_link.open_in_new_tab %}target="_blank"{% endif %}
+    {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+  >
+    {{ module.button_text }}
+  </a>
+</div>

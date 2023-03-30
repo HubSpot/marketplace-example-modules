@@ -1,0 +1,228 @@
+[
+  {
+    "label": "Button text",
+    "name": "button_text",
+    "type": "text",
+    "required": true,
+    "default": "Click here"
+  },
+  {
+    "label": "Button link",
+    "name": "button_link",
+    "type": "link",
+    "supported_types": ["EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG"],
+    "default": {
+      "url": {
+        "href": "",
+        "type": "EXTERNAL"
+      }
+    }
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Text",
+        "name": "group_text",
+        "type": "group",
+        "children": [
+          {
+            "label": "Font",
+            "name": "font",
+            "type": "font",
+            "inherited_value": {
+              "property_value_paths": {
+                "fallback": "theme.body_font.fallback",
+                "font": "theme.body_font.font",
+                "font_set": "theme.body_font.font_set",
+                "variant": "theme.body_font.variant"
+              }
+            },
+            "default": {
+              "color": "#ffffff",
+              "size_unit": "px",
+              "styles": {
+                "text-decoration": "none"
+              }
+            }
+          },
+          {
+            "label": "Transform",
+            "name": "transform",
+            "type": "choice",
+            "choices": [
+              [ "none", "None" ],
+              [ "capitalize", "Capitalize" ],
+              [ "uppercase", "Uppercase" ],
+              [ "lowercase", "Lowercase" ]
+            ],
+            "display": "select",
+            "default": "none"
+          }
+        ]
+      },
+      {
+        "label": "Background",
+        "name": "group_background",
+        "type": "group",
+        "children": [
+          {
+            "label": "Color",
+            "name": "color",
+            "type": "color",
+            "inherited_value": {
+              "property_value_paths": {
+                "color": "theme.primary_color.color"
+              }
+            },
+            "default": {
+              "color": "#1c2e4a",
+              "opacity": 100
+            }
+          }
+        ]
+      },
+      {
+        "label": "Border",
+        "name": "group_border",
+        "type": "group",
+        "children": [
+          {
+            "label" : "Border",
+            "name" : "border",
+            "type" : "border"
+          }
+        ]
+      },
+      {
+        "label": "Hover",
+        "name": "group_hover",
+        "type": "group",
+        "children": [
+          {
+            "label": "Text",
+            "name": "group_text",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font",
+                "name": "font",
+                "type": "font",
+                "visibility": {
+                  "hidden_subfields": {
+                    "size": true
+                  }
+                },
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "module.styles.group_text.font.color",
+                    "fallback": "module.styles.group_text.font.fallback",
+                    "font": "module.styles.group_text.font.font",
+                    "font_set": "module.styles.group_text.font.font_set",
+                    "styles": "module.styles.group_text.font.styles",
+                    "variant": "module.styles.group_text.font.variant"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "label": "Background",
+            "name": "group_background",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "module.styles.group_background.color.color",
+                    "opacity": "module.styles.group_background.color.opacity"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "label": "Border",
+            "name": "group_border",
+            "type": "group",
+            "children": [
+              {
+                "label" : "Border",
+                "name" : "border",
+                "type" : "border"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Corner",
+        "name": "group_corner",
+        "type": "group",
+        "children": [
+          {
+            "label": "Radius",
+            "name": "radius",
+            "type": "number",
+            "display": "text",
+            "max": 100,
+            "step": 1,
+            "suffix": "px",
+            "default": 5
+          }
+        ]
+      },
+      {
+        "label": "Spacing",
+        "name": "group_spacing",
+        "type": "group",
+        "children": [
+          {
+            "label": "Spacing",
+            "name": "spacing",
+            "type": "spacing",
+            "default": {
+              "padding": {
+                "top": {
+                  "value": 10,
+                  "units": "px"
+                },
+                "right": {
+                  "value": 20,
+                  "units": "px"
+                },
+                "bottom": {
+                  "value": 10,
+                  "units": "px"
+                },
+                "left": {
+                  "value": 20,
+                  "units": "px"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Alignment",
+        "name": "group_alignment",
+        "type": "group",
+        "children": [
+          {
+            "label": "Alignment",
+            "name": "alignment",
+            "type": "alignment",
+            "alignment_direction": "HORIZONTAL"
+          }
+        ]
+      }
+    ]
+  }
+]
