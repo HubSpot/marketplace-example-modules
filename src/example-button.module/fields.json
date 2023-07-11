@@ -140,7 +140,7 @@
                 "type": "color",
                 "inherited_value": {
                   "property_value_paths": {
-                    "color": "module.styles.group_background.color.color",
+                    "color": "theme.secondary_color.color",
                     "opacity": "module.styles.group_background.color.opacity"
                   }
                 }
