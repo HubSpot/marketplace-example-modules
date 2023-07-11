@@ -118,10 +118,12 @@
                 },
                 "inherited_value": {
                   "property_value_paths": {
-                    "fallback": "theme.heading_font.fallback",
-                    "font": "theme.heading_font.font",
-                    "font_set": "theme.heading_font.font_set",
-                    "variant": "theme.body_font.variant"
+                    "color": "module.styles.group_text.font.color",
+                    "fallback": "module.styles.group_text.font.fallback",
+                    "font": "module.styles.group_text.font.font",
+                    "font_set": "module.styles.group_text.font.font_set",
+                    "styles": "module.styles.group_text.font.styles",
+                    "variant": "module.styles.group_text.font.variant"
                   }
                 }
               }
